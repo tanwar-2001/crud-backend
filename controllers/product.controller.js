@@ -24,7 +24,7 @@ const createProduct = async (req, res) => {
     const product = await Product.create(req.body);
     res.status(200).send(product);
   } catch (error) {
-    console.log({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
